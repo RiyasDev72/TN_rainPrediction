@@ -1,92 +1,95 @@
 # TN_rainPrediction
-Perfect! Thanks for sharing your actual project structure. Based on this, here’s a README tailored to your setup:
 
-Tamil Nadu Rain Prediction
+A machine learning project that predicts whether it will rain tomorrow in any district of Tamil Nadu, India. The project fetches weather data via an **API**, preprocesses it, trains a model using **Logistic Regression**, and allows predictions for user-specified districts.
 
-A machine learning project that predicts whether it will rain tomorrow in any district of Tamil Nadu, India. The project fetches weather data via an API, preprocesses it, trains a model using Logistic Regression, and allows predictions for user-specified districts.
+---
 
-Features
+## ✨ Features
 
-Fetches historical weather data for Tamil Nadu districts using an API.
+- Fetches historical weather data for Tamil Nadu districts using an **API**  
+- Preprocesses data and saves it in a **Parquet file** for efficiency  
+- Trains a **Logistic Regression model** using `scikit-learn`  
+- Saves the trained model using **Joblib** for future predictions  
+- Predicts whether it will rain tomorrow based on user-input **district name**  
 
-Preprocesses data and saves it in a Parquet file for efficiency.
+---
 
-Trains a Logistic Regression model using scikit-learn.
+## 🛠️ Installation
 
-Saves the trained model using Joblib for future predictions.
+1. Clone this repository:
 
-Predicts whether it will rain tomorrow based on user-input district name.
+```bash
+git clone https://github.com/RiyasDev72/TN_rainPrediction.git
+cd TN_rainPrediction
+```
 
-Installation
+2. Install the required dependencies:
 
-Clone this repository:
+```bash
+pip install pandas numpy scikit-learn joblib requests
+```
 
-git clone https://github.com/USERNAME/REPO_NAME.git
-cd REPO_NAME
+---
 
+## 📊 Dependencies
 
-Install dependencies (recommended in a virtual environment):
+- pandas
+- numpy
+- scikit-learn
+- joblib
+- requests (for API calls)
 
-pip install -r requirements.txt
+---
 
-
-Dependencies include:
-
-pandas
-
-numpy
-
-scikit-learn
-
-joblib
-
-requests (for API calls)
-
-Usage
+## 🚀 Usage
 
 All the main work is done in the Jupyter Notebook:
 
-Open the notebook:
+1. Open the notebook:
 
+```bash
 jupyter notebook TN_rainPredicton.ipynb
+```
 
+2. The notebook contains all steps:
+   - Fetch weather data via API
+   - Preprocess and clean the data (`TamilNaduWeather_AfterPreprocessing(NoDup,properindex).parquet`)
+   - Train a Logistic Regression model and save it (`TN_rainPredicton_data.joblib`)
+   - Predict rain for a user-specified district
 
-The notebook contains all steps:
+3. To make predictions:
+   - Run the prediction cells in the notebook
+   - Enter a district name when prompted
+   - Output: `Rain tomorrow: Yes` or `Rain tomorrow: No`
 
-Fetch weather data for Tamil Nadu districts via API.
+---
 
-Preprocess and clean the data (TamilNaduWeather_AfterPreprocessing(NoDup,properindex).parquet).
+## 📁 Project Structure
 
-Train a Logistic Regression model and save it (TN_rainPredicton_data.joblib).
-
-Predict rain for a user-specified district.
-
-To make predictions:
-
-Run the prediction cells in the notebook.
-
-Enter a district name when prompted.
-
-Output: Rain tomorrow: Yes or Rain tomorrow: No.
-
-Project Structure
-├── tamil_nadu_rain_prediction_rows/           # Folder with raw or additional data
+```
+TN_rainPrediction/
+├── tamil_nadu_rain_prediction_rows/                       # Folder with raw/additional data
 ├── TamilNaduWeather_AfterPreprocessing(NoDup,properindex).parquet  # Preprocessed dataset
-├── TN_rainPredicton.ipynb                     # Main Jupyter Notebook with full pipeline
-├── TN_rainPredicton_data.joblib               # Trained Logistic Regression model
-└── README.md                                  # This file
+├── TN_rainPredicton.ipynb                                 # Main Jupyter Notebook
+├── TN_rainPredicton_data.joblib                           # Trained Logistic Regression model
+└── README.md                                              
+```
 
-How it Works
+---
 
-Data Fetching: Collects weather data (temperature, humidity, wind, precipitation, etc.) for Tamil Nadu districts using an API.
+## 🔧 How it Works
 
-Preprocessing: Cleans data, removes duplicates, ensures proper indexing, and saves it in Parquet format.
+1. **Data Fetching**: Collects weather data (temperature, humidity, wind, precipitation, etc.) for Tamil Nadu districts using an API
+2. **Preprocessing**: Cleans data, removes duplicates, ensures proper indexing, and saves it in Parquet format
+3. **Model Training**: Logistic Regression predicts RainTomorrow based on historical weather data
+4. **Prediction**: User enters a district name, and the trained model predicts whether it will rain tomorrow
 
-Model Training: Logistic Regression predicts RainTomorrow based on historical weather data.
+---
 
-Prediction: User enters a district name, and the trained model predicts whether it will rain tomorrow.
+## 👨‍💻 Made By
 
+**Riyas**  
+- GitHub: [RiyasDev72](https://github.com/RiyasDev72)  
+- Email: riyasdev72@gmail.com  
 
-Made BY:
-     GitHub username: RiyasDev72
-     Email          : riyasdev72@gmail.com
+---
